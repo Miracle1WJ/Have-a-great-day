@@ -1,0 +1,36 @@
+1.NETCTOSS
+	NET: 网络
+	C: China
+	T: telecom 电信
+	O: Operation 运营
+	S: Support 支持
+	S: System 系统
+	中国电信运营支持系统-网络版
+
+2.导包
+ - javaee
+ - ojdbc
+ - commons-dbcp
+ - jstl
+
+3.路径规范
+ - 查询资费：/netctoss/findCost.do
+ - 打开增加资费：/netctoss/toAddCost.do
+ - 增加保存：/netctoss/addCost.do
+ 
+
+4.JSP命名规范
+ - 查询资费：/WEB-INF/cost/find.jsp
+ - 增加资费：/WEB-INF/cost/add.jsp
+
+
+
+
+
+
+
+
+
+
+
+

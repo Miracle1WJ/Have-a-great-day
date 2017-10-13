@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>netctoss</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>main</servlet-name>
+  	<servlet-class>web.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>main</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 此处写JSP路径时，应当写绝对路径。此处的路径在使用时Tomcat会自动在前面补充项目名，所以就不要写项目名了。 -->
+  <!-- 1.按照异常类型配置 -->
+  <!-- <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  -->
+  <!-- 2.按照异常编号配置 -->
+  <error-page>
+  	<error-code>40</error-code>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>50</error-code>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  
+  <!-- 登录检查过滤器 -->
+  <filter>
+  	<filter-name>login</filter-name>
+  	<filter-class>web.LoginFilter</filter-class>
+  	<init-param>
+  		<param-name>ignorePath</param-name>
+  		<param-value>
+  			/toLogin.do,/login.do,/createImg.do
+  		</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+</web-app>
+
+
+
+
+
